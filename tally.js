@@ -10,6 +10,15 @@ tally.timeLocal = date;
 //UTC timestamp
 tally.timeUTC = date.getTime;
 
+//location info
+tally.href = document.location.href;
+tally.path = document.location.pathname;
+tally.query = document.location.search;
+tally.hash = document.location.hash;
+
+//referrer info
+tally.referrer = document.referrer;
+
 //height and width of the device screen, in device pixels
 tally.screenWidth = screen.width;
 tally.screenHeight = screen.height;
