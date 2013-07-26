@@ -12,8 +12,9 @@ tally.timeUTC = date.getTime;
 
 //location info
 tally.href = document.location.href;
+tally.host = document.location.hostname;
 tally.path = document.location.pathname;
-tally.query = document.location.search;
+tally.search = document.location.search;
 tally.hash = document.location.hash;
 
 //referrer info
