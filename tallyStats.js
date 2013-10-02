@@ -1,22 +1,25 @@
 //relies on underscore
 
-//get a sorted json object of screen widths, sorted top to bottom
+//get a sorted json object of any property of tally, sorted top to bottom
 
-//list of widths
-var bw = _.chain(tallies).map(function(tick){return tick.browserWidth;})._wrapped;
-//uniqe widths
-var bw_u = _.chain(tallies).map(function(tick){return tick.browserWidth;}).uniq()._wrapped;
+//to get a list of widths do: listSomething(browserWidths)
 
-var browserWidths = [];
+function listSomething(thing){
+	var arr = _.chain(tallies).map(function(tick){return tick[thing];})._wrapped;
+	var arr_u = _.uniq(arr);
 
-for (var i=0; i<bw_u.length; i++){
-    var widthCount = 0;
-    for (var j=0;j<bw.length; j++){
-        if(bw[j] == bw_u[i]) {
-           thisWidth ++; 
-        }
-    }
-    browserWidths.push({'width':bw_u[i],'count':widthCount});
+	toReturn = [];
+
+	for (var i=0; i<arr_u.length; i++){
+	    var counter = 0;
+	    for (var j=0;j<arr.length; j++){
+	        if(arr[j] == arr_u[i]) {
+	           counter ++; 
+	        }
+	    }
+	    toReturn.push({thing:arr_u[i],'count':counter});
+	}
+
+	toReturn = _.sortBy(toReturn,function(number){return 0-number.count});
+	return toReturn;
 }
-
-browserWidths = _.sortBy(browserWidths,function(width){return 0-width.count});
