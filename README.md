@@ -2,6 +2,7 @@ tally
 =====
 
 A privacy respecting alternative to google analytics.
+
 **This is very much alpha, so if you are using it and you want to actually view the results, and your name is not Neil, then you better email me.**
 
 
