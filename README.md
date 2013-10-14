@@ -29,6 +29,10 @@ Best (Link to the library and leverage your likely pre-existing document ready c
         
     });
     
+<script>
+alert('hello');
+</script>
+    
 ###Usage
 
 Include a link to the tally.js file in your head.
