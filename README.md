@@ -9,9 +9,9 @@ A privacy respecting alternative to google analytics.
 ###Quickstart
 The  `tally.quickstart.js` file includes a `pageView` event out of the box. Just include the file after jQuery is loaded, usually in the `<head>` or at the end of the `<body>` in html.
 
-Works (Hotlink to github repo):
+Works (Hotlink to the script):
 
-`<script type="text/javascript" src="https://raw.github.com/crismanNoble/tally/master/tally.quickstart.js"></script>`
+`<script type="text/javascript" src="http://mksht.com/tally/tally.quickstart.js"></script>`
 
 Better (Link to a copy on your own server):
 
@@ -29,9 +29,10 @@ Best (Link to the library and leverage your likely pre-existing document ready c
         
     });
     
-<script>
-alert('hello');
-</script>
+
+**Wordpress**
+
+It seems word press uses noConflict quite a bit, if the above code doesn't work, try using `jQuery(stuff)` instead of `$(stuff)`
     
 ###Usage
 
