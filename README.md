@@ -6,6 +6,29 @@ A privacy respecting alternative to google analytics.
 **This is very much alpha, so if you are using it and you want to actually view the results, and your name is not Neil, then you better email me.**
 
 
+###Quickstart
+The  `tally.quickstart.js` file includes a `pageView` event out of the box. Just include the file after jQuery is loaded, usually in the `<head>` or at the end of the `<body>` in html.
+
+Works (Hotlink to github repo):
+
+`<script type="text/javascript" src="https://raw.github.com/crismanNoble/tally/master/tally.quickstart.js"></script>`
+
+Better (Link to a copy on your own server):
+
+`<script type="text/javascript" src="tally.quickstart.js"></script>`
+
+Best (Link to the library and leverage your likely pre-existing document ready call to manually trigger a `pageView`):
+
+`<script type="text/javascript" src="tally.quickstart.js"></script>`
+
+    //in a new <script> or a separate file...
+    $(document).ready(function(){
+    	// all you existing code
+    	
+        _tally.tick('pageView','Optional detail string');
+        
+    });
+    
 ###Usage
 
 Include a link to the tally.js file in your head.
@@ -18,21 +41,18 @@ Tally is dependant on jQuery so make sure you pull it in **after** jQuery is loa
 
 To record a hit use `_tally.tick(event,detail)` for example, something as simple as:
 
-`
-$(document).ready(function(){
-	_tally.tick('hit','Any other detail you want.');
-});
-`
+    $(document).ready(function(){
+        _tally.tick('hit','Any other detail you want.');
+    });
+
 
 will do the trick.
 
 Let's say you want to track hovering of your logo, well you could do this:
 
-`
-$('#logo').hover(function(){
-	_tally.tick('hover','Logo Hover');
-});
-`
+    $('#logo').hover(function(){
+        _tally.tick('hover','Logo Hover');
+    });
 
 If you want to record a click that heads off the page, you should use `_tally.click(event,string)` where event is the actuall click event, and the string is an optional argument to record in the details.
 
