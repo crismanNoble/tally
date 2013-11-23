@@ -25,7 +25,11 @@ The  `tally.quickstart.js` file includes a `pageView` event out of the box. Just
 
 Works (Hotlink to the script):
 
-`<script type="text/javascript" src="http://mksht.com/tally/tally.quickstart.js"></script>`
+`<script type="text/javascript" src="http://trytally.com/tally.quickstart.js"></script>`
+
+or
+
+`<script type="text/javascript" src="https://trytally.com/tally.quickstart.js"></script>`
 
 Better (Link to a copy on your own server):
 
